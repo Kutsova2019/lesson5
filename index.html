@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>hw5</title>
+</head>
+<body>
+	<script>
+		// first
+		function isCharPresent(symbol, string) {
+			for(var i = 0; i < string.length; i++) {
+				if (string[i] === symbol) {
+					return true;
+				}
+			
+			}
+
+			return false;
+		}
+
+		console.log(isCharPresent('w', 'hello world!'));
+
+		// second
+		
+		function charIndexOf(symbol, string){
+			for(var i = 0; i < string.length; i++){
+				if (string[i] === symbol) {
+					return i;
+				}
+			}
+			
+			return -1;
+		}
+
+		console.log(charIndexOf('l', 'hello world'));
+
+		// third
+		var user = {
+			name: "Olga",
+			age: 56,
+			children: {
+				name: "Sasha",
+				age: 23,
+			}
+		};
+
+		var person = user;
+
+		var profile = function objectClone(object){
+			var clone = {};
+			
+			for (var u in user) {
+				if (typeof object[u] === 'object' && object[u] !== null) {
+					clone[u] = objectClone(object[u])
+
+				} else {
+					clone[u] = object[u];
+				}
+				
+			}
+			
+			return clone;
+
+		}
+		
+		console.log(person);
+		console.log(user);
+
+
+
+
+
+		
+
+		
+		
+		
+
+
+	</script>
+
+</body>
+</html>
